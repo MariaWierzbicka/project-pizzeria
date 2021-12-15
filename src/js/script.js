@@ -145,7 +145,7 @@
       const formData = utils.serializeFormToObject(thisProduct.form);
       console.log('formData', formData);
 
-      let price = thisProduct.data.Price;
+      let price = thisProduct.data.price;
 
       for(let paramId in thisProduct.data.params) {
         const param = thisProduct.data.params[paramId];
@@ -155,9 +155,17 @@
           const option = param.options[optionId];
           console.log('option:', optionId, option);
           
-          
-
-          
+          if(formData[paramId] && formData[paramId].includes(optionId)){
+            console.log(paramId, optionId);
+            
+            if(!option.default){
+              price += option.price;
+            }
+          } else {
+            if(option.default){
+              price -= option.price;
+            }
+          }        
           
         }
       }
