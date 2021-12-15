@@ -88,6 +88,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
     initAccordion(){
       const thisProduct = this;      
@@ -98,7 +99,7 @@
         event.preventDefault();
 
         /* find active product (product that has active class) */
-        const activeProducts = document.getElementsByClassName('product active');
+        const activeProducts = document.querySelectorAll(select.all.menuProductsActive);
         
 
         /* if there is active product and it's not thisProduct.element, remove class active from it */
@@ -106,13 +107,13 @@
         if (activeProducts.length !== 0) {
           for (let activeProduct of activeProducts) {
             if (activeProduct !== thisProduct.element) {
-              activeProduct.classList.remove('active');
+              activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
             }
           }
         }
 
         /* toggle active class on thisProduct.element */
-        thisProduct.element.classList.toggle('active');
+        thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
 
       });
 
@@ -155,9 +156,10 @@
           const option = param.options[optionId];
           console.log('option:', optionId, option);
           
-          if(formData[paramId] && formData[paramId].includes(optionId)){
+          const selectedOption = formData[paramId] && formData[paramId].includes(optionId);
+          if(selectedOption){
             console.log(paramId, optionId);
-            
+
             if(!option.default){
               price += option.price;
             }
@@ -165,8 +167,20 @@
             if(option.default){
               price -= option.price;
             }
-          }        
-          
+          }
+          const imgClassName = '.' + paramId + '-' + optionId;
+          console.log('imgclass', imgClassName);
+        
+          const optionImg = thisProduct.imageWrapper.querySelector(imgClassName);
+          console.log('optionImg', optionImg);
+
+          if(optionImg){
+            if(selectedOption){
+              optionImg.classList.add(classNames.menuProduct.imageVisible);
+            } else {
+              optionImg.classList.remove(classNames.menuProduct.imageVisible);
+            }
+          } 
         }
       }
       thisProduct.priceElem.innerHTML = price;
