@@ -171,7 +171,22 @@
         background: $color-dark;
         opacity: 0.4;
       }
+    }
+    
+    &.selected {
+      cursor: pointer;
+      color: darken($color-active, 40%);
 
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: $color-active;
+        opacity: 0.3;
+      }
     }
   }
 
