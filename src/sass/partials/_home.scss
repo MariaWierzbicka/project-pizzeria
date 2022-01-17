@@ -1,0 +1,227 @@
+/* Variables */
+$img-order: url('../assets/pizza-1.jpg');
+$img-booking: url('../assets/pizza-2.jpg');
+$img-comment: url('../assets/pizza-3.jpg');
+// $img-gallery1: url('../gallery/pizza-4.jpg');
+// $img-gallery2: url('../gallery/pizza-5.jpg');
+// $img-gallery3: url('../gallery/pizza-6.jpg');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.home-wrapper {
+  max-height: fit-content;
+  margin: ($base-size * 3.5) auto;
+  padding: ($base-size * 6) ($base-size * 4);
+  background: $color-light;
+  border-bottom: 1px solid lighten($color-dark, 70%);
+  border-radius: $radius;
+  text-align: center;
+  display: block;
+}
+
+.home-header {
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin-bottom: 2em;
+}
+
+.home-nav {
+  display: flex;
+}
+
+.home-nav a {
+  text-decoration: none;
+  color: $color-light;
+}
+
+.home-nav > .button {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+  color: $color-light;
+  margin: 4px;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-nav > .button h2 {
+  margin: 0;
+  position: absolute;
+}
+
+.home-nav > .button p {
+  position: relative;
+  top: 42%;
+  opacity: 0;
+  // transition: all 1s;
+}
+
+.home-nav > .button:hover h2 {
+  transform: translateY(-50%);
+  transition: all 0.7s;
+  cursor: pointer;
+}
+
+.home-nav > .button:hover p {
+  line-height: 1.5;
+  transform: translateY(-110%);
+  transition: all 0.7s;
+  opacity: 1;
+  // display: block;
+}
+
+// .home-nav > .button:hover {
+//   cursor: pointer;
+// }
+
+.home-order {
+  background: $img-order;
+}
+
+.home-booking {
+  background: $img-booking;
+}
+
+.opening-hours {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: 8.3em;
+  background-color: $color-main;
+  color: $color-light;
+  margin: 4px;
+  border-radius: 4px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 22px;
+}
+
+.opening-hours h2 {
+  margin: 0;
+}
+
+/* Carousel */
+.carousel-box {
+  display: inline-flex;
+  max-height: 250px;
+  margin: 4em auto;
+  padding: 5px;
+}
+
+.carousel-cell {
+  width: 100%; /* full width */
+  height: 250px; /* height of carousel */
+  // margin-right: 10px;
+}
+
+.carousel-box > .photo {
+  width: 300px;
+  height: 220px;
+  background: $img-comment;
+  background-position: center center;
+  background-size: cover;
+}
+
+.carousel-box > .text {
+  // width: 70%;
+  height: 220px;
+  padding: 25px;
+  align-items: center;
+}
+
+.carousel-box p, h2 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.carousel-box span {
+  font-style: italic;
+}
+
+.main-carousel {
+  height: 250px;
+  display: block;
+  
+}
+
+.flickity-button:disabled {
+  display: none;
+}
+
+.flickity-page-dots {
+  bottom: -40px;
+}
+
+/* Gallery */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 114px;
+  justify-content: space-evenly;
+}
+
+.gallery i {
+  font-size: 24px;
+  line-height: 60px;
+  width: 40px;
+  height: 40px;
+  color: $color-light;
+  opacity: 0;
+}
+
+.gallery .photo {
+  position: relative;
+  width: 30%;
+  aspect-ratio: 1 / 1;
+  margin: 4px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 4px;
+}
+
+.photo .gallery-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+
+.photo:hover .gallery-icons{
+  opacity: 1;
+}
+
+.photo:hover i {
+  opacity: 1;
+}
+
+.gallery-icons i:hover {
+  color: $color-main;
+}
+
+.gallery-link {
+  text-align: left;
+}
+
+.gallery-link a {
+  color: $color-main;
+  margin: 30px 10px;
+}

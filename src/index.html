@@ -7,6 +7,7 @@
   <title>Pizzeria</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/flickity.css" media="screen">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="vendor/range-slider.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -21,6 +22,7 @@
           <h2 class="logo__subtitle">the best homemade Italian food</h2>
         </div>
         <div class="main-nav">
+          <a href="#home">Home</a>
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
       </div>
@@ -62,6 +64,9 @@
   </header>
 
   <div id="pages">
+    <section id="home">
+      <div id="home-wrapper" class="home-wrapper container"></div>
+    </section>
     <section id="order">
       <div id="product-list" class="product-list container"></div>
     </section>
@@ -176,6 +181,7 @@
 
     </article> <!-- .product -->
   </script>
+
   <script id="template-booking-widget" type="text/x-handlebars-template">
     <div class="booking-widget">
       <h2 class="page__title no-spacing">Book a table</h2>
@@ -242,7 +248,90 @@
     </div>
   </script>
 
+  <script id="template-home-page" type="text/x-handlebars-template">
+    <div class="home-wrapper container">
+      <div class="home-header">
+        <div class="home-nav pages">            
+          <div id="order" class="home-order button">
+            <h2 class="page__title no-spacing"><a href="#order">Order online</a></h2>
+            <p>Delicious food delivered to your door</p>
+          </div>
+          <div id="booking" class="home-booking button">
+             <h2 class="page__title no-spacing"><a href="#booking">Book a table</a></h2>
+          </div>
+        </div>
+        <div class="opening-hours">
+          <h2 class="page__title no-spacing">Opening hours:</h2>TUE-SUN, 12PM-12AM
+        </div>
+      </div>
+      <div class="main-carousel">
+        <div class="carousel-cell">
+          <div class="carousel-box">
+            <div class="carousel-cell photo"></div>
+            <div class="carousel-cell text">
+              <h2>Amazing service!</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur rutrum leo vel malesuada. Etiam sit amet laoreet est, at.
+              </p>
+              <p><span>- Margaret Osborne</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="carousel-box">
+            <div class="carousel-cell photo"></div>
+            <div class="carousel-cell text">
+              <h2>Great atmosphere</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur rutrum leo vel malesuada. Etiam sit amet laoreet est, at.
+                </p>
+                <p><span>- Jane Doe</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="gallery photo" style="background-image: url('../assets/gallery/pizza-4.jpg');">
+          <div class="gallery-icons">
+          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+        </div>
+        <div class="gallery photo" style="background-image: url('../assets/gallery/pizza-5.jpg');">
+          <div class="gallery-icons">
+          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+        </div>
+        <div class="gallery photo" style="background-image: url('../assets/gallery/pizza-6.jpg');">
+          <div class="gallery-icons">
+          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+        </div>
+        <div class="gallery photo" style="background-image: url('../assets/gallery/pizza-7.jpg');">
+          <div class="gallery-icons">
+          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+        </div>
+        <div class="gallery photo" style="background-image: url('../assets/gallery/pizza-8.jpg');">
+          <div class="gallery-icons">
+          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+        </div>
+        <div class="gallery photo" style="background-image: url('../assets/gallery/pizza-9.jpg');">
+          <div class="gallery-icons">
+          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+        </div>      
+      </div>
+      <div class="gallery-link"><a href='#'>View more on Instagram</a></div>
+    </div>
+  </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+  <script src="vendor/flickity.pkgd.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="vendor/range-slider.min.js"></script>
   <script src="js/app.js" type="module"></script>

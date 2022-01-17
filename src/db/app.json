@@ -1,4 +1,16 @@
-{
+{     
+   "images":[
+      {
+         "images":[
+           "<img class=\"gallery\" src=\"images/gallery/pizza-4.jpg\">",
+           "<img class=\"gallery\" src=\"images/gallery/pizza-5.jpg\">",
+           "<img class=\"gallery\" src=\"images/gallery/pizza-6.jpg\">",
+           "<img class=\"gallery\" src=\"images/gallery/pizza-7.jpg\">",
+           "<img class=\"gallery\" src=\"images/gallery/pizza-8.jpg\">",
+           "<img class=\"gallery\" src=\"images/gallery/pizza-9.jpg\">"
+         ]
+      }
+   ],
     "products":[
        {
           "id":"cake",
